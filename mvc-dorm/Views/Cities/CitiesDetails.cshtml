@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "CitiesDetails";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!-- Head -->
+<div class="heading mt-4 mb-4">
+    <div class="card card_head_1">
+        <div class="card-body">
+            <h1 class="text-center ">Şehir İsmi</h1>
+        </div>
+    </div>
+</div>
+<div class="card card_head_2">
+    <div class="card-body card_head_2">
+        <h6 class="head_title_1_2 d-inline-block ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae a distinctio, nulla eum praesentium optio minima in neque excepturi fugit magni repellat accusantium architecto iusto omnis commodi perspiciatis sit voluptas?</h6>
+
+    </div>
+</div>
+
+<div class="container ">
+    <div class="row">
+
+        <div class="col mt-5"><img class="city_img m-auto" style="width:600px; height:400px;"  src="https://picsum.photos/200/100" alt=""></div>
+    </div>
+</div>
+
+<!-- Head-End -->
+<!-- Cities-Card -->
+<div class="container me-5 mt-5 ">
+    <div class="row ">
+        <div class="col-lg-4 p-2 mt-5 ">
+            <div class="property-card citiescard ">
+                <a href="#">
+                    <div class="property-image">
+                        <div class="property-image-title">
+                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+                        </div>
+                    </div>
+                </a>
+                <div class="property-description">
+                    <h5> Yurt adedi kadar kart tanımla </h5>
+                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+        <!-- Cities-Card-End -->
+
+@Html.Action("Footer","Home")
+

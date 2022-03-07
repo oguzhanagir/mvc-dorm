@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "DormDetails";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@Html.Partial("DormDetailsHeader","Dorm")
+@Html.Partial("DormDetailsContent","Dorm")
+@Html.Partial("DormDetailsComment","Dorm")
+@Html.Action("Footer","Home")
+

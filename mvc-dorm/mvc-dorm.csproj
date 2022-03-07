@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{74FC5C29-63A4-4576-B99D-B8DB6004D624}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mvc_dorm</RootNamespace>
+    <AssemblyName>mvc-dorm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44361</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\CitiesController.cs" />
+    <Compile Include="Controllers\DormController.cs" />
+    <Compile Include="Controllers\DormPriceController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UniversityController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="frontend-dorm\assets\Logo.png" />
+    <Content Include="frontend-dorm\assets\logoresponsive.jpeg" />
+    <Content Include="frontend-dorm\assets\video1.mp4" />
+    <Content Include="frontend-dorm\assets\video2.mp4" />
+    <Content Include="frontend-dorm\css\button.css" />
+    <Content Include="frontend-dorm\css\cities-card.css" />
+    <Content Include="frontend-dorm\css\loader.css" />
+    <Content Include="frontend-dorm\css\main.css" />
+    <Content Include="frontend-dorm\css\slider.css" />
+    <Content Include="frontend-dorm\js\slider.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="frontend-dorm\.git\config" />
+    <Content Include="frontend-dorm\.git\description" />
+    <Content Include="frontend-dorm\.git\FETCH_HEAD" />
+    <Content Include="frontend-dorm\.git\HEAD" />
+    <Content Include="frontend-dorm\.git\hooks\applypatch-msg.sample" />
+    <Content Include="frontend-dorm\.git\hooks\commit-msg.sample" />
+    <Content Include="frontend-dorm\.git\hooks\fsmonitor-watchman.sample" />
+    <Content Include="frontend-dorm\.git\hooks\post-update.sample" />
+    <Content Include="frontend-dorm\.git\hooks\pre-applypatch.sample" />
+    <Content Include="frontend-dorm\.git\hooks\pre-commit.sample" />
+    <Content Include="frontend-dorm\.git\hooks\pre-merge-commit.sample" />
+    <Content Include="frontend-dorm\.git\hooks\pre-push.sample" />
+    <Content Include="frontend-dorm\.git\hooks\pre-rebase.sample" />
+    <Content Include="frontend-dorm\.git\hooks\pre-receive.sample" />
+    <Content Include="frontend-dorm\.git\hooks\prepare-commit-msg.sample" />
+    <Content Include="frontend-dorm\.git\hooks\push-to-checkout.sample" />
+    <Content Include="frontend-dorm\.git\hooks\update.sample" />
+    <Content Include="frontend-dorm\.git\index" />
+    <Content Include="frontend-dorm\.git\info\exclude" />
+    <Content Include="frontend-dorm\.git\logs\HEAD" />
+    <Content Include="frontend-dorm\.git\logs\refs\heads\main" />
+    <Content Include="frontend-dorm\.git\logs\refs\remotes\origin\HEAD" />
+    <Content Include="frontend-dorm\.git\logs\refs\remotes\origin\main" />
+    <Content Include="frontend-dorm\.git\objects\01\178ea90903e27f71d0cb0abdcbe8fe2dabcf74" />
+    <Content Include="frontend-dorm\.git\objects\01\5428263cbeb69a44d3b8495e63137db9413de0" />
+    <Content Include="frontend-dorm\.git\objects\02\f22a09346689f4228c285475d900c132f0e7ea" />
+    <Content Include="frontend-dorm\.git\objects\03\22531e46ac38c3fbc12bfaae5ad1ff7b937ac1" />
+    <Content Include="frontend-dorm\.git\objects\03\226e57c1d2e76c6c8dd8a4384a85b4a9c1bbde" />
+    <Content Include="frontend-dorm\.git\objects\03\9ad91fa15d9f21b8d19a16c90584b45c40c40f" />
+    <Content Include="frontend-dorm\.git\objects\03\c6a881bc114cd81583effae886bcd244dcb92f" />
+    <Content Include="frontend-dorm\.git\objects\06\b06f233ce424f106be12601a595e8f09238eea" />
+    <Content Include="frontend-dorm\.git\objects\06\c37e31e92ee156a3cc2fff7fe51239bc7ef0f9" />
+    <Content Include="frontend-dorm\.git\objects\06\dacf56e346a908b06938195cdb3801aac29563" />
+    <Content Include="frontend-dorm\.git\objects\08\a35dca1b074a0d39cddef7421bf1d2edae5f2a" />
+    <Content Include="frontend-dorm\.git\objects\0a\65c5a3702a5dc7572b4ed4fc119e8e106f5ed7" />
+    <Content Include="frontend-dorm\.git\objects\0b\21ad6c3ca1f5234157688b81862b2e23032207" />
+    <Content Include="frontend-dorm\.git\objects\0b\5aba7bdf45f8f952d240c907ca867ed56258cf" />
+    <Content Include="frontend-dorm\.git\objects\0c\21408792b497c365a33bd610892ffbc49ebad3" />
+    <Content Include="frontend-dorm\.git\objects\0d\922ed54b8091f1753c97921460d0a35ffea12b" />
+    <Content Include="frontend-dorm\.git\objects\0e\4241adffa3f1b432875192eeb92635ddaeedfc" />
+    <Content Include="frontend-dorm\.git\objects\0f\e63538af592c9dae3236cb9251b03fc8f74149" />
+    <Content Include="frontend-dorm\.git\objects\11\78d71331f68aa7bb75b0c52f101e9de28d398e" />
+    <Content Include="frontend-dorm\.git\objects\12\bef9a5698f95a98d69cc6642a9351c3d93eb10" />
+    <Content Include="frontend-dorm\.git\objects\13\4d4bb07f74bbc07dfaf0efc0ce6886e55689f9" />
+    <Content Include="frontend-dorm\.git\objects\14\ecb4e90a286230d6d0e8f38d00fc7041852cb4" />
+    <Content Include="frontend-dorm\.git\objects\15\4d55af9d0b2082ad8f87a31ff9c065822c8caa" />
+    <Content Include="frontend-dorm\.git\objects\18\db22f796eb56d921a120146380770b439cda9f" />
+    <Content Include="frontend-dorm\.git\objects\1a\6e2e49251e761b28196251a8e51920d5b93d72" />
+    <Content Include="frontend-dorm\.git\objects\1a\83e0a8edb9ef6a25847cca4849f7ea4a3b4827" />
+    <Content Include="frontend-dorm\.git\objects\1c\06cfd4853519e9ddb3e3c2bfc2d452c3259938" />
+    <Content Include="frontend-dorm\.git\objects\1c\52cfea5a6ef7cecfed96be600b0cf372fdea24" />
+    <Content Include="frontend-dorm\.git\objects\1d\309f7241ee3b0ad9888d5eb1d68ceb83eeef36" />
+    <Content Include="frontend-dorm\.git\objects\1e\62b8d1819a11c8a1c2deef6b57c159716a115d" />
+    <Content Include="frontend-dorm\.git\objects\20\06446243c4161909b6f388abf205495e0ed5f8" />
+    <Content Include="frontend-dorm\.git\objects\21\750e565ec16c4979bf33c688b5e03f1b206e88" />
+    <Content Include="frontend-dorm\.git\objects\22\93ba334d816bc32942fe0798f605e9dad29b1c" />
+    <Content Include="frontend-dorm\.git\objects\23\eff460db8f1ce683f3c481c7225bd010016650" />
+    <Content Include="frontend-dorm\.git\objects\24\37bf76bad07e33ed2b7ea2a5e20086dc08ec8e" />
+    <Content Include="frontend-dorm\.git\objects\25\6568792a8ed83210850144c0a582a233b9b431" />
+    <Content Include="frontend-dorm\.git\objects\25\e56f28f831f84cd3e767688eb4aa9d31c80702" />
+    <Content Include="frontend-dorm\.git\objects\28\6ee9fffcd01bbd0c89ea8a5954b991710113b8" />
+    <Content Include="frontend-dorm\.git\objects\29\103630fb45a66d22b286daeb252ddf75762e1d" />
+    <Content Include="frontend-dorm\.git\objects\29\17cc65b277cc1606ab36de9ff6fb00ba9861c5" />
+    <Content Include="frontend-dorm\.git\objects\2a\646acb460ed65aa18ac0b3464fe297ec055202" />
+    <Content Include="frontend-dorm\.git\objects\2a\d33842267b9f140119b4143eddb44f3b1e3914" />
+    <Content Include="frontend-dorm\.git\objects\2c\2a789a4bf0fa2d83bbb63182688b1b3b177800" />
+    <Content Include="frontend-dorm\.git\objects\2c\30f09c5e12f2f1e9b9af1235f72f245a4c3788" />
+    <Content Include="frontend-dorm\.git\objects\2c\7df2faf6cb8e6f825aae1978e0cf2c868f75f7" />
+    <Content Include="frontend-dorm\.git\objects\2c\c11fc4733bc69dbcca6d4f7c70c76aad382b9f" />
+    <Content Include="frontend-dorm\.git\objects\2e\4350a0d903ffe3db0dd1b4ac34e8806a92ddd2" />
+    <Content Include="frontend-dorm\.git\objects\2e\465483c17e1062a97918efd078bf38bffff9a8" />
+    <Content Include="frontend-dorm\.git\objects\2e\ee2aaf78a146755ac73154c11de21b4e259a0f" />
+    <Content Include="frontend-dorm\.git\objects\2f\5f2e411d4ebfb23155aebd3c872383cca4b5fd" />
+    <Content Include="frontend-dorm\.git\objects\2f\6de9cd104f73957bec67bbc5bd1e958c1f460b" />
+    <Content Include="frontend-dorm\.git\objects\2f\8aae6d08fbbdd20042beaf9fbf11f871f4f3e8" />
+    <Content Include="frontend-dorm\.git\objects\30\41d578b5156e8b413007898ee4c24bae65b584" />
+    <Content Include="frontend-dorm\.git\objects\30\93506aab8ce9bf326de699e78a00c2cf3318bf" />
+    <Content Include="frontend-dorm\.git\objects\32\139830a55ad54700145a2db2c130e5c0100b63" />
+    <Content Include="frontend-dorm\.git\objects\33\0db0960360add64c573212674700ae62585709" />
+    <Content Include="frontend-dorm\.git\objects\33\b47e9db6017886231df82611a95d1a2b8c4308" />
+    <Content Include="frontend-dorm\.git\objects\36\9ccd978ba56ae03e937d94ca760f2993d76df5" />
+    <Content Include="frontend-dorm\.git\objects\37\d0959f7e745ee44927f084ba6830936a37420e" />
+    <Content Include="frontend-dorm\.git\objects\39\52b2395bbac652dc872f859b8c0baf93021c84" />
+    <Content Include="frontend-dorm\.git\objects\3e\25740e7565c23a97e38c62b0f83da79195b20c" />
+    <Content Include="frontend-dorm\.git\objects\3f\43d2b0ade0ee74d62440e343e217f5357c0d14" />
+    <Content Include="frontend-dorm\.git\objects\40\dade9964872747ddebe34cc7c6874f93fbf158" />
+    <Content Include="frontend-dorm\.git\objects\43\4e814467e6cc9ba5392755f2205deca7f2d576" />
+    <Content Include="frontend-dorm\.git\objects\44\126dae92dc1ff265203e654fb2b083011e603c" />
+    <Content Include="frontend-dorm\.git\objects\47\88066c33f50c9b69f045bc319f965fb2fefba2" />
+    <Content Include="frontend-dorm\.git\objects\4a\269045e0c60ba42b03360de6b689355a02649a" />
+    <Content Include="frontend-dorm\.git\objects\4b\1beda8b9018d8bd18f249551761a792ec1999b" />
+    <Content Include="frontend-dorm\.git\objects\4c\6ce8c30390d738fe51e9858b4ad7ea6c2ac386" />
+    <Content Include="frontend-dorm\.git\objects\4c\a0b4b755bb00649bac90b46ee0706ed30df5bd" />
+    <Content Include="frontend-dorm\.git\objects\4d\04760a83d22c18d56c1aaee0179ac4e1367739" />
+    <Content Include="frontend-dorm\.git\objects\51\acbb8a8534afd98f1fdf780b44ec81734c3f1a" />
+    <Content Include="frontend-dorm\.git\objects\51\f5a62a43e3fad8a549d8ca6f4f485fa50e300e" />
+    <Content Include="frontend-dorm\.git\objects\53\a79d2ef1d9ae4f2be92de755e3d1e500ae9c07" />
+    <Content Include="frontend-dorm\.git\objects\53\c3a46a4985876f64d7ae0f0df32a4678895a52" />
+    <Content Include="frontend-dorm\.git\objects\54\503bab6eee25bedf33c2d91245511ae2be7132" />
+    <Content Include="frontend-dorm\.git\objects\55\10f00ee9e6f2bbf5761b3495cff35d562452bb" />
+    <Content Include="frontend-dorm\.git\objects\55\1772956d9a7cb44326fb6c47603ddad9432dd5" />
+    <Content Include="frontend-dorm\.git\objects\59\8e50ba100ab15511f1c0e33ae4340515fabab2" />
+    <Content Include="frontend-dorm\.git\objects\5c\0e1f9522be54f7d07737ad681dbff082372d7b" />
+    <Content Include="frontend-dorm\.git\objects\5c\8d25061575fe99cfcbb83310011c09f00ab59f" />
+    <Content Include="frontend-dorm\.git\objects\5d\65dcb7161e9511402c4f508a77fa27542021dd" />
+    <Content Include="frontend-dorm\.git\objects\5d\87433034cbc564cffc1daeb6e6e6d465c7a66e" />
+    <Content Include="frontend-dorm\.git\objects\5f\a28496929f440cf9951cf20d412dbb939e2abb" />
+    <Content Include="frontend-dorm\.git\objects\60\b71a5e23410e871f9e37382ca8a221228f967c" />
+    <Content Include="frontend-dorm\.git\objects\61\293f6022ab507a8fefe6ada63ee3343f6abdee" />
+    <Content Include="frontend-dorm\.git\objects\61\44b9d972badd7177e7ab4896d2246532286ad7" />
+    <Content Include="frontend-dorm\.git\objects\63\8d9c79ba72906fe69eb5c33b57dbb361f4ba3d" />
+    <Content Include="frontend-dorm\.git\objects\63\92c83a270b31680f5a2c2a71a091f15780b4ff" />
+    <Content Include="frontend-dorm\.git\objects\64\0401da6f5dd2b04006ea17b8e4e7a6db89ed14" />
+    <Content Include="frontend-dorm\.git\objects\64\dcaa96fcce024f802647366ea896e1c84beec1" />
+    <Content Include="frontend-dorm\.git\objects\65\3fc60351420c5adc8cbcc0713dd5ad3e4853ba" />
+    <Content Include="frontend-dorm\.git\objects\65\ff444e6ef420c919cd1888841d1019bf09625c" />
+    <Content Include="frontend-dorm\.git\objects\68\8b3947054a7b01feb3b7445af531a1d4d7e59f" />
+    <Content Include="frontend-dorm\.git\objects\68\d651b2eb193d27390abc280efbb547b8db4ab8" />
+    <Content Include="frontend-dorm\.git\objects\6a\2f7421cbdb63ffe2bbd212c9d1ff789cfb6cc0" />
+    <Content Include="frontend-dorm\.git\objects\6a\b1429f583510557c905594d502655c35767a77" />
+    <Content Include="frontend-dorm\.git\objects\6b\b77ee65d8f6396211bc2d37d94fb3716721bbf" />
+    <Content Include="frontend-dorm\.git\objects\6b\f24845f73794f78c8299d1532a0bca597e2e52" />
+    <Content Include="frontend-dorm\.git\objects\6e\93e02d07a049f97f6a09b61a2b95949e716cac" />
+    <Content Include="frontend-dorm\.git\objects\6e\a1af0c6ba712759c1fe014ab20b2dc33bf4b73" />
+    <Content Include="frontend-dorm\.git\objects\71\af7719531127084828f6e4aa51e94aa6c7d6c6" />
+    <Content Include="frontend-dorm\.git\objects\75\9e2d0bcf1598b66ac36c1d20cb6d00c377261c" />
+    <Content Include="frontend-dorm\.git\objects\76\4a3f8f4b70d68eb3fdfdda1c7dd6dde55e9c39" />
+    <Content Include="frontend-dorm\.git\objects\78\4f3f200f0cbc02bd7a2d0f2b33d441c99f05e8" />
+    <Content Include="frontend-dorm\.git\objects\79\598865b66ba7aee1ea393be9b6eabeb499c82e" />
+    <Content Include="frontend-dorm\.git\objects\7b\be13694a5d1d7413a5acd0ffec0c3d9dff19e4" />
+    <Content Include="frontend-dorm\.git\objects\7c\b8267774c47807d971cd25e6e3462f09f05fee" />
+    <Content Include="frontend-dorm\.git\objects\7d\2735e9792ae615e36e3460a68d7f510a3efa40" />
+    <Content Include="frontend-dorm\.git\objects\7d\9952f8eb62c916554055bb021dff7e34516576" />
+    <Content Include="frontend-dorm\.git\objects\7e\a4456e82a8b7a5efccc76e222011f2304e846a" />
+    <Content Include="frontend-dorm\.git\objects\80\94bc556bfb2b2524b33cb22c159387b27112c1" />
+    <Content Include="frontend-dorm\.git\objects\83\efbcac215ce64e4de46a91a5f58896ba9923c4" />
+    <Content Include="frontend-dorm\.git\objects\84\d33ef8db04e81b7db5502a8d12454eb47f798b" />
+    <Content Include="frontend-dorm\.git\objects\86\1922f2996dbd9ec9066070bb6777c4c0a831c6" />
+    <Content Include="frontend-dorm\.git\objects\89\a5043cf84f37a1628061cf0451041510631589" />
+    <Content Include="frontend-dorm\.git\objects\8b\1999397fd52e06081a36d896e1239f6da7236c" />
+    <Content Include="frontend-dorm\.git\objects\8c\21fa8899ca96bec49a18d079a4ff5de68e10f7" />
+    <Content Include="frontend-dorm\.git\objects\8e\2cf239ef3fd23613d9af8596459360a4581373" />
+    <Content Include="frontend-dorm\.git\objects\8f\7c7ef46a55fed6558a5a5b65bdd65673da133e" />
+    <Content Include="frontend-dorm\.git\objects\93\d2a5be3ced3260fa78666202c9e267cbbb5ba2" />
+    <Content Include="frontend-dorm\.git\objects\94\9867992820f1db47cf69815a8617f76e7d6cff" />
+    <Content Include="frontend-dorm\.git\objects\94\e37d0eb23efe4967d914a65d5cd3209ae0bfa7" />
+    <Content Include="frontend-dorm\.git\objects\95\18c3c64240c146e4fbd2fd0d6b33827e19e4b8" />
+    <Content Include="frontend-dorm\.git\objects\95\26fe9bed68861012ccafafd4ad22e90d6410ee" />
+    <Content Include="frontend-dorm\.git\objects\97\16a20ed7cc5e0f7f6ab57a3b2c57f3a05f41e9" />
+    <Content Include="frontend-dorm\.git\objects\97\5602efd11759aca18db9ab06fec93fae083741" />
+    <Content Include="frontend-dorm\.git\objects\97\a9c480802f84d271f8b20643b934f285da5aa6" />
+    <Content Include="frontend-dorm\.git\objects\97\b96d73fa76faee474d0d0ab41a4be4ee203b28" />
+    <Content Include="frontend-dorm\.git\objects\98\bb91efbc955f5588d2ed08175b6b3991b0007e" />
+    <Content Include="frontend-dorm\.git\objects\9a\4e63a7589a4c1f72b21ef10d2052933f1cc3a2" />
+    <Content Include="frontend-dorm\.git\objects\9b\7647f3371b0ce4f8321987f614dae5827f5f60" />
+    <Content Include="frontend-dorm\.git\objects\9f\b5a7c917b65fcbf4d5ceb879529ff08562c315" />
+    <Content Include="frontend-dorm\.git\objects\a1\9f6d6cf92abf4268d6075ce5340000dc7cd9c5" />
+    <Content Include="frontend-dorm\.git\objects\a3\c7c7577b59da411cbd2acc3ca246df0b855d71" />
+    <Content Include="frontend-dorm\.git\objects\a5\a960450c187989ba1b88ef1e095440a1b4321e" />
+    <Content Include="frontend-dorm\.git\objects\a8\1161faa9ad98b0470e293f01ab0aa11ca93572" />
+    <Content Include="frontend-dorm\.git\objects\a8\a66f4fcecdc7d69fa376be51744a7a17c07b1e" />
+    <Content Include="frontend-dorm\.git\objects\a8\ab18e0d46197196745abc1d99548e48a496fd2" />
+    <Content Include="frontend-dorm\.git\objects\a8\b8844ba66de6db909953aa5383c75babebc1e8" />
+    <Content Include="frontend-dorm\.git\objects\ab\6724db8323db0c8ecbc78903e8a71982a98dfb" />
+    <Content Include="frontend-dorm\.git\objects\ad\a07d5e7a0db5c0fed0391a9a1b52368caa7d2d" />
+    <Content Include="frontend-dorm\.git\objects\af\9285db735832f88740c6b108efb57e8dbfd279" />
+    <Content Include="frontend-dorm\.git\objects\b1\6c7f77fe2c78cc9e74a17de3e15431bb3c15e4" />
+    <Content Include="frontend-dorm\.git\objects\b1\e05fdc1e3a5069388ebf4e6c30c43b40606279" />
+    <Content Include="frontend-dorm\.git\objects\b2\5f35cdc6c6bcb5bc8e7d60c17488352c42b1e6" />
+    <Content Include="frontend-dorm\.git\objects\b3\0b9862b7bf27b7c76298fe321be97e3c772361" />
+    <Content Include="frontend-dorm\.git\objects\b3\16c35c7937ab6a0a1b611d392ae167070a1e3a" />
+    <Content Include="frontend-dorm\.git\objects\b4\5906335bd64255f79a7a1b6e23dd781c271bd0" />
+    <Content Include="frontend-dorm\.git\objects\b4\871b3efd5e8da224edc2289b55da48511dd365" />
+    <Content Include="frontend-dorm\.git\objects\b6\3928ed28507c74be58f71943866c597ce5b28a" />
+    <Content Include="frontend-dorm\.git\objects\b7\15cd62414ad54c564adfd3ed6c38bf3c3e5b7e" />
+    <Content Include="frontend-dorm\.git\objects\b7\ecdc5eb821d3467949ba682c83cd3519f0367f" />
+    <Content Include="frontend-dorm\.git\objects\b9\27b2223e1382f0e5f8458c0b3541f7213a5f6d" />
+    <Content Include="frontend-dorm\.git\objects\bb\80f2c7396d6fb5aa0e67b1b280d923dc122fdf" />
+    <Content Include="frontend-dorm\.git\objects\bc\e62c6d6c382570a871205ca7282464647a358a" />
+    <Content Include="frontend-dorm\.git\objects\be\66a7bc37ffbb7f7ca64ae2bfcc2763e3c55c81" />
+    <Content Include="frontend-dorm\.git\objects\c0\ebd7aa31faa8f04347fd1ab94873f470973404" />
+    <Content Include="frontend-dorm\.git\objects\c1\b3e97971e90629fa165464e9e22af249a01d26" />
+    <Content Include="frontend-dorm\.git\objects\c2\365cacf90da7a3fc5b47377299b839941ade2d" />
+    <Content Include="frontend-dorm\.git\objects\c2\9412e6f2f83b6f38bcd02015eacb97882f44f1" />
+    <Content Include="frontend-dorm\.git\objects\c3\96a5a7c6db884d6b17e7f897ae7041ca7e1d24" />
+    <Content Include="frontend-dorm\.git\objects\c3\f72c817e3c0f2173860a30f036df3f29231184" />
+    <Content Include="frontend-dorm\.git\objects\c4\e5087c97dfcd2c1789bbdf19719498ed1ae79f" />
+    <Content Include="frontend-dorm\.git\objects\c9\69d8a313b8443c4b698c2f07f86a924853ed35" />
+    <Content Include="frontend-dorm\.git\objects\ca\54d0bbda82f7a6fc1a380461763211864a10ac" />
+    <Content Include="frontend-dorm\.git\objects\cb\b02fa8d03259387bf09733b9859a7ae9be1b2c" />
+    <Content Include="frontend-dorm\.git\objects\cb\c0bee2e89421ba79e551f2c50b392f42f02606" />
+    <Content Include="frontend-dorm\.git\objects\d0\74a8812328399c24fd57ccc30cb545546f2f7a" />
+    <Content Include="frontend-dorm\.git\objects\d2\3d894c4d11027f6e95f9f29975dfbe947b57f0" />
+    <Content Include="frontend-dorm\.git\objects\d6\3a16c80c4095f35cfcdd898297bedbee65b9cd" />
+    <Content Include="frontend-dorm\.git\objects\d7\ef8edf462f7950858807d1d2b971d9c596491c" />
+    <Content Include="frontend-dorm\.git\objects\d8\08cb262813cf5c0a4cd0bbc02dcbd7eed9f999" />
+    <Content Include="frontend-dorm\.git\objects\da\6438b9ab99069f1491e776dccd32e6f62d1fff" />
+    <Content Include="frontend-dorm\.git\objects\db\1f30b97b9c2097c61723158337c4f15eae4989" />
+    <Content Include="frontend-dorm\.git\objects\db\53cc5e3c98d9516664e8828c740fa07e25dfac" />
+    <Content Include="frontend-dorm\.git\objects\df\0970a00462171bcc1c34ab472157004549d736" />
+    <Content Include="frontend-dorm\.git\objects\df\81e9b0c32f1d54b3ba06b01c922d4dbc02211a" />
+    <Content Include="frontend-dorm\.git\objects\df\c62e52c7235d63f88a2a55ed2d04b3945e57a9" />
+    <Content Include="frontend-dorm\.git\objects\e2\18b456e02431f46179e380a391e2dd324fefb8" />
+    <Content Include="frontend-dorm\.git\objects\e3\9c1e45548e3c635fcfe4600fad5aa4f3a5e301" />
+    <Content Include="frontend-dorm\.git\objects\e3\fc590548801cc179a8d8d53203f8eecdd6d7f6" />
+    <Content Include="frontend-dorm\.git\objects\e5\8b130e39a69f812bbd3a7247ff21f68af4d584" />
+    <Content Include="frontend-dorm\.git\objects\e5\8ec5223603c967e8a1f2524c3942ced344ea81" />
+    <Content Include="frontend-dorm\.git\objects\e7\1bc36c3e81cb69b23e0e3d3315075bf3aff8fd" />
+    <Content Include="frontend-dorm\.git\objects\e9\af6d49e5ef5ccf6ea42c6610cc925488c94014" />
+    <Content Include="frontend-dorm\.git\objects\ea\f9d0df5547111ced2d1a4909f34ddefd90e377" />
+    <Content Include="frontend-dorm\.git\objects\ed\4754ede91d7034ecf8d0b2c0fc31d680cf0b22" />
+    <Content Include="frontend-dorm\.git\objects\f2\59ae04b00d57cf58de87e35519a9b7ee861ece" />
+    <Content Include="frontend-dorm\.git\objects\f4\aefead1b840c3376eef5149cab87f70dc6de54" />
+    <Content Include="frontend-dorm\.git\objects\f5\9199029d3afeddce746562cbf39d0aba1932d9" />
+    <Content Include="frontend-dorm\.git\objects\f5\f9da184769d69670b4fb87e0bca3fea024c9e6" />
+    <Content Include="frontend-dorm\.git\objects\f8\d630bdd902f8feb11fac5fff37c3c8d6f6625e" />
+    <Content Include="frontend-dorm\.git\objects\f9\a311c287615c68f59b57a4a4adb6208e874909" />
+    <Content Include="frontend-dorm\.git\objects\fb\183c3c233c3659be9d7e3222ddec5579a0125f" />
+    <Content Include="frontend-dorm\.git\objects\fb\ced0ce0ad1d48742756f497ddccdd453a82dcc" />
+    <Content Include="frontend-dorm\.git\objects\fd\9344581bfb2789ca62a7e7eb9b271f4f034b55" />
+    <Content Include="frontend-dorm\.git\objects\fe\ba0c6220b8a3e21fd0c397fde088275554430a" />
+    <Content Include="frontend-dorm\.git\objects\ff\0c1181812a47c38eecca9978d734b1bbfa02e9" />
+    <Content Include="frontend-dorm\.git\objects\ff\88e68627c565a59c75d11e31f27fd9d20e8227" />
+    <Content Include="frontend-dorm\.git\objects\ff\d9662e37a0f5a378161ea170afed9240fba646" />
+    <Content Include="frontend-dorm\.git\objects\pack\pack-380343141e144c6b6cf8beea72a8cbf96aaf860c.idx" />
+    <Content Include="frontend-dorm\.git\objects\pack\pack-380343141e144c6b6cf8beea72a8cbf96aaf860c.pack" />
+    <Content Include="frontend-dorm\.git\ORIG_HEAD" />
+    <Content Include="frontend-dorm\.git\packed-refs" />
+    <Content Include="frontend-dorm\.git\refs\heads\main" />
+    <Content Include="frontend-dorm\.git\refs\remotes\origin\HEAD" />
+    <Content Include="frontend-dorm\.git\refs\remotes\origin\main" />
+    <Content Include="frontend-dorm\LICENSE" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Header.cshtml" />
+    <Content Include="Views\Home\PopularDorm.cshtml" />
+    <Content Include="Views\Home\HomeAbout.cshtml" />
+    <Content Include="Views\Home\SponsorHome.cshtml" />
+    <Content Include="Views\Home\Cities.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\Footer.cshtml" />
+    <Content Include="Views\Dorm\Index.cshtml" />
+    <Content Include="Views\Dorm\HeaderDorm.cshtml" />
+    <Content Include="Views\Dorm\PopularDorm.cshtml" />
+    <Content Include="Views\Cities\Index.cshtml" />
+    <Content Include="Views\Cities\HeaderCities.cshtml" />
+    <Content Include="Views\Cities\ContentCities.cshtml" />
+    <Content Include="Views\University\Index.cshtml" />
+    <Content Include="Views\University\HeaderUniversity.cshtml" />
+    <Content Include="Views\University\ContentUniversity.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\DormPrice\Index.cshtml" />
+    <Content Include="Views\DormPrice\FormPrice.cshtml" />
+    <Content Include="Views\DormPrice\PriceContent.cshtml" />
+    <Content Include="Views\University\UniversityDetails.cshtml" />
+    <Content Include="Views\Cities\CitiesDetails.cshtml" />
+    <Content Include="Views\Dorm\DormDetailsHeader.cshtml" />
+    <Content Include="Views\Dorm\DormDetailsContent.cshtml" />
+    <Content Include="Views\Dorm\DormDetailsComment.cshtml" />
+    <Content Include="Views\Dorm\DormDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="frontend-dorm\.git\objects\info\" />
+    <Folder Include="frontend-dorm\.git\refs\tags\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{eb547517-01db-4298-a573-a652929efa44}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{161dab1b-e104-4f3b-ba7e-56893d6d91ef}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{f2d72370-a7b8-43e6-946e-d31cf2d35473}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63140</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44361/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "UniversityDetails";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!-- Head -->
+<div class="container ">
+    <div class="row">
+        <div class="col-8 mt-5 pt-5">
+            <h1>Üniversite Adı </h1><br>
+            <p>Üniversite Hakkında Bilgi</p>
+        </div>
+        <div class="col-4 mt-5"><img src="https://picsum.photos/100/50" alt=""></div>
+    </div>
+</div>
+
+<!-- Head-End -->
+<!-- Cities-Card -->
+<div class="container me-5 mt-5">
+    <div class="row">
+        <div class="col-lg-4 p-2 mt-5">
+            <div class="property-card">
+                <a href="#">
+                    <div class="property-image">
+                        <div class="property-image-title">
+                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+                        </div>
+                    </div>
+                </a>
+                <div class="property-description">
+                    <h5> Yurt adedi kadar kart tanımla </h5>
+                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Cities-Card-End -->
+
+        @Html.Action("Footer", "Home")
