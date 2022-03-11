@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,12 @@ namespace DataAccessLayer.Concrete
             _object.Remove(p);
             return c.SaveChanges();
         }
+
+        public T Find(Expression<Func<T, bool>> where)
+        {
+            return _object.FirstOrDefault(where);
+        }
+
 
         public T GetByID(int id)
         {

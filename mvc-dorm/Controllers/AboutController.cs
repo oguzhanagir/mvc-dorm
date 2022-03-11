@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,12 @@ namespace mvc_dorm.Controllers
 {
     public class AboutController : Controller
     {
+        AboutManager am = new AboutManager();
         // GET: About
         public ActionResult Index()
         {
-            return View();
+            var aboutList = am.GetAll();
+            return View(aboutList);
         }
     }
 }

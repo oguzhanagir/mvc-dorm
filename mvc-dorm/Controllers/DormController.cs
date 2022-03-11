@@ -1,4 +1,6 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,7 @@ namespace mvc_dorm.Controllers
 {
     public class DormController : Controller
     {
+      
         // GET: Dorm
         DormManager _dm = new DormManager();
 
@@ -24,7 +27,8 @@ namespace mvc_dorm.Controllers
 
         public PartialViewResult PopularDorm()
         {
-            return PartialView();
+            var dormlist = _dm.GetAll();
+            return PartialView(dormlist);
         }
         public PartialViewResult DormDetails()
         {
@@ -43,6 +47,10 @@ namespace mvc_dorm.Controllers
         public PartialViewResult DormDetailsComment()
         {
             return PartialView();
+        }
+        public ActionResult DormByUniversity()
+        {
+            return View();
         }
     }
 }

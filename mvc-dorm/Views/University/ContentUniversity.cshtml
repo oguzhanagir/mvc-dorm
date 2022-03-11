@@ -1,56 +1,23 @@
-﻿<!-- İtem-Card -->
+﻿@model IEnumerable<EntityLayer.Concrete.University>
+
+<!-- İtem-Card -->
 <div class="container mt-5">
     <div class="head p-5">
         <h1>Üniversiteler</h1>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-
+        @foreach (var item in Model)
+        {
         <div class="col">
             <a href="universities_main.html">
                 <div class="card">
                     <img src="https://picsum.photos/200/100" class="card-img-top" alt="...">
-
+                    <p>@item.UniversityName</p>
                 </div>
             </a>
         </div>
-        <div class="col">
-            <a href="universities_main.html">
-                <div class="card">
-                    <img src="https://picsum.photos/200/100" class="card-img-top" alt="...">
-
-                </div>
-            </a>
-        </div><div class="col">
-            <a href="universities_main.html">
-                <div class="card">
-                    <img src="https://picsum.photos/200/100" class="card-img-top" alt="...">
-
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="universities_main.html">
-                <div class="card">
-                    <img src="https://picsum.photos/200/100" class="card-img-top" alt="...">
-
-                </div>
-            </a>
-        </div><div class="col">
-            <a href="universities_main.html">
-                <div class="card">
-                    <img src="https://picsum.photos/200/100" class="card-img-top" alt="...">
-
-                </div>
-            </a>
-        </div><div class="col">
-            <a href="universities_main.html">
-                <div class="card">
-                    <img src="https://picsum.photos/200/100" class="card-img-top" alt="...">
-
-                </div>
-            </a>
-        </div>
-    </div>
+        }
 </div>
+    </div>
 
 <!-- İtem-Card-End -->

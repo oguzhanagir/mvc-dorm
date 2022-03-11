@@ -1,18 +1,19 @@
-﻿<!-- Cities-Card -->
+﻿@model IEnumerable<EntityLayer.Concrete.City>
+<!-- Cities-Card -->
 <div class="container me-5 mt-5">
     <div class="row">
+        @foreach (var item in Model)
+        {
         <div class="col-lg-4 p-2  ">
             <div class="property-card citiescard">
                 <a href="cities_main.html">
-                    <div class="property-image">
-                        <div class="property-image-title">
-                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
-                        </div>
+                    <div class="">
+                      <img src="@item.CityImage" />
                     </div>
                 </a>
                 <div class="property-description">
-                    <h5> Card Title </h5>
-                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                    <h5>@item.CityName </h5>
+                    
                 </div>
                 <a href="cities_main.html">
                     <div class="property-social-icons">
@@ -21,106 +22,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-lg-4 p-2  ">
-            <div class="property-card citiescard">
-                <a href="cities_main.html">
-                    <div class="property-image">
-                        <div class="property-image-title">
-                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
-                        </div>
-                    </div>
-                </a>
-                <div class="property-description">
-                    <h5> Card Title </h5>
-                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
-                </div>
-                <a href="cities_main.html">
-                    <div class="property-social-icons">
-                        <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-4 p-2  ">
-            <div class="property-card citiescard">
-                <a href="cities_main.html">
-                    <div class="property-image">
-                        <div class="property-image-title">
-                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
-                        </div>
-                    </div>
-                </a>
-                <div class="property-description">
-                    <h5> Card Title </h5>
-                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
-                </div>
-                <a href="cities_main.html">
-                    <div class="property-social-icons">
-                        <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-4 p-2 mt-lg-5  ">
-            <div class="property-card citiescard">
-                <a href="cities_main.html">
-                    <div class="property-image">
-                        <div class="property-image-title">
-                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
-                        </div>
-                    </div>
-                </a>
-                <div class="property-description">
-                    <h5> Card Title </h5>
-                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
-                </div>
-                <a href="cities_main.html">
-                    <div class="property-social-icons">
-                        <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-4 p-2 mt-lg-5  ">
-            <div class="property-card citiescard">
-                <a href="cities_main.html">
-                    <div class="property-image">
-                        <div class="property-image-title">
-                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
-                        </div>
-                    </div>
-                </a>
-                <div class="property-description">
-                    <h5> Card Title </h5>
-                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
-                </div>
-                <a href="cities_main.html">
-                    <div class="property-social-icons">
-                        <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-4 p-2 mt-lg-5  ">
-            <div class="property-card citiescard">
-                <a href="#">
-                    <div class="property-image">
-                        <div class="property-image-title">
-                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
-                        </div>
-                    </div>
-                </a>
-                <div class="property-description">
-                    <h5> Card Title </h5>
-                    <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
-                </div>
-                <a href="#">
-                    <div class="property-social-icons">
-                        <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
-                    </div>
-                </a>
-            </div>
-        </div>
+        }
     </div>
 </div>
 

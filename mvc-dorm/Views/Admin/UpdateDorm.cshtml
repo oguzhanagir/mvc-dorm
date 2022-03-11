@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Dorm
+
+@{
+    ViewBag.Title = "UpdateDorm";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    @Html.Label("Yurt Adı")
+    @Html.TextBoxFor(x => x.DormName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yatak Sayısı")
+    @Html.TextBoxFor(x => x.Bed, new { @class = "form-control" })
+    <br />
+    @Html.Label("Wifi Durumu")
+    @Html.TextBoxFor(x => x.Wifi, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ögün Sayısı")
+    @Html.TextBoxFor(x => x.DormName, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.Description, 5, 20, new { @class = "form-control" })
+    <br />
+    @Html.Label("Adres")
+    @Html.TextAreaFor(x => x.Adress, 5, 20, new { @class = "form-control" })
+    <br />
+    @Html.Label("Website")
+    @Html.TextBoxFor(x => x.Website, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetkili Adı")
+    @Html.TextBoxFor(x => x.Advisior, new { @class = "form-control" })
+    <br />
+    @Html.Label("Telefon Numarası")
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sehir")
+    @Html.DropDownListFor(x => x.CityID, (List<SelectListItem>)ViewBag.values, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetki")
+    @Html.DropDownListFor(x => x.AuthorID, (List<SelectListItem>)ViewBag.values2, new { @class = "form-control" })
+
+
+
+    <button class="btn btn-rounded btn-success mt-3"> Kaydet</button>
+</form>
+
+

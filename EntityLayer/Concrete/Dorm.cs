@@ -18,10 +18,10 @@ namespace EntityLayer.Concrete
         [StringLength(5)]
         public string Bed { get; set; }
 
-        [StringLength(1)]
+        [StringLength(10)]
         public string Wifi { get; set; }
 
-        [StringLength(1)]
+        [StringLength(10)]
         public string Meal { get; set; }
 
         [StringLength(30)]

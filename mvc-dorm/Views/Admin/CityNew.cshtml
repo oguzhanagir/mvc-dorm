@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.City
+@{
+    ViewBag.Title = "CityNew";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    @Html.Label("Sehir Adı")
+    @Html.TextBoxFor(x => x.CityName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sehir Resim Yolu")
+    @Html.TextBoxFor(x => x.CityImage, new { @class = "form-control" })
+
+
+    <button class="btn btn-rounded btn-success mt-3"> Kaydet</button>
+</form>
+

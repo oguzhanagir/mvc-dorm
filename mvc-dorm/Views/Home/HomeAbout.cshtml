@@ -1,43 +1,53 @@
-﻿<!-- why-Wrap-Responsive -->
+﻿@model IEnumerable<EntityLayer.Concrete.About>
+
+<!-- why-Wrap-Responsive -->
 <div class="container  abaout d-xl-none d-xxl-none d-md-none">
     <div class="row">
-        <div class="col-12">
-            <div class="heading">
-                <div class="card card_head_2">
-                    <div class="card-body card_head_2">
-                        <h5 class="head_title_1 d-inline-block ">seninyurdun.com hakkında</h5>
+        @foreach (var item in Model)
+        {
 
+            <div class="col-12">
+                <div class="heading">
+                    <div class="card card_head_2">
+                        <div class="card-body card_head_2">
+                            <h5 class="head_title_1 d-inline-block ">seninyurdun.com hakkında</h5>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6 col-12 mt-4 pb-lg-4">
-            <div class="card card_head_2">
-                <div class="card-body card_head_2">
-                    <h6 class="head_title_1_2 d-inline-block ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae a distinctio, nulla eum praesentium optio minima in neque excepturi fugit magni repellat accusantium architecto iusto omnis commodi perspiciatis sit voluptas?</h6>
+
+            <div class="col-lg-6 col-12 mt-4 pb-lg-4">
+
+
+                <div class="card card_head_2">
+                    <div class="card-body card_head_2">
+                        <h6 class="head_title_1_2 d-inline-block ">@item.AboutContent</h6>
+
+                    </div>
+                    <!-- Button Responsive -->
+                    <div class="mb-3 d-xl-none d-xxl-none d-md-none">
+                        <a href="about.html"><h5 class="d-inline-block btn_abo ">Daha Fazla</h5><i class="fa-solid fa-arrow-right d-inline-block float-end me-5 mt-2 "></i></a>
+                    </div>
 
                 </div>
-                <!-- Button Responsive -->
-                <div class="mb-3 d-xl-none d-xxl-none d-md-none">
-                    <a href="about.html"><h5 class="d-inline-block btn_abo ">Daha Fazla</h5><i class="fa-solid fa-arrow-right d-inline-block float-end me-5 mt-2 "></i></a>
+
+
+
+
+                <!-- Button web -->
+                <div class="btn float-start mt-4 d-none d-lg-block d-xl-block ">
+                    <a href="about.html" class="cta">
+                        <span>Daha Fazla</span>
+                        <svg width="13px" height="10px" viewBox="0 0 13 10">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </a>
                 </div>
-
+                <!-- Button Web End -->
             </div>
-
-
-
-            <!-- Button web -->
-            <div class="btn float-start mt-4 d-none d-lg-block d-xl-block ">
-                <a href="about.html" class="cta">
-                    <span>Daha Fazla</span>
-                    <svg width="13px" height="10px" viewBox="0 0 13 10">
-                        <path d="M1,5 L11,5"></path>
-                        <polyline points="8 1 12 5 8 9"></polyline>
-                    </svg>
-                </a>
-            </div>
-            <!-- Button Web End -->
-        </div>
+        }
     </div>
 </div>
 

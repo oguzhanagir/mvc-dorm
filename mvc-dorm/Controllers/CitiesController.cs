@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace mvc_dorm.Controllers
 {
     public class CitiesController : Controller
     {
+        CitiesManager cm = new CitiesManager();
         // GET: Cities
         public ActionResult Index()
         {
@@ -20,7 +22,8 @@ namespace mvc_dorm.Controllers
 
         public PartialViewResult ContentCities()
         {
-            return PartialView();
+            var cityList = cm.GetAll();
+            return PartialView(cityList);
         }
         public PartialViewResult CitiesDetails()
         {

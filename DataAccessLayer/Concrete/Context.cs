@@ -20,6 +20,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Dorm> Dorms { get; set; }
         public DbSet<Faculty> Faculties { get; set; }
         public DbSet<University> Universities { get; set; }
+        public DbSet<News> News { get; set; }
     
     }
 }

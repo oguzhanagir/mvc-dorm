@@ -1,26 +1,30 @@
-﻿
+﻿@model IEnumerable<EntityLayer.Concrete.About>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
 <!-- why-Wrap -->
-<div class="heading mt-4">
-    <div class="card card_head_1">
-        <div class="card-body">
-            <h1 class="text-center ">Neden Ve Nasıl</h1>
+@foreach (var item in Model)
+{
+    <div class="heading mt-4">
+        <div class="card card_head_1">
+            <div class="card-body">
+                <h1 class="text-center ">@item.AboutTitle</h1>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="col-lg-6 col-12 mt-4 pb-lg-4 text-center ">
-    <div class="card card_head_2">
-        <div class="card-body card_head_2">
-            <h6 class="head_title_1_2 d-inline-block ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae a distinctio, nulla eum praesentium optio minima in neque excepturi fugit magni repellat accusantium architecto iusto omnis commodi perspiciatis sit voluptas?</h6>
+    <div class="col-lg-6 col-12 mt-4 pb-lg-4 text-center ">
+        <div class="card card_head_2">
+            <div class="card-body card_head_2">
+                <h6 class="head_title_1_2 d-inline-block ">@item.AboutContent</h6>
 
+            </div>
         </div>
     </div>
- </div>
 
+}
 
-@Html.Action("Footer","Home")
+@Html.Action("Footer", "Home")

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace mvc_dorm.Controllers
 {
     public class UniversityController : Controller
     {
+        UniversityManager um = new UniversityManager();
+
         // GET: University
         public ActionResult Index()
         {
@@ -19,7 +22,8 @@ namespace mvc_dorm.Controllers
         }
         public PartialViewResult ContentUniversity()
         {
-            return PartialView();
+            var universityList = um.GetAll();
+            return PartialView(universityList);
         }
         public PartialViewResult UniversityDetails()
         {
