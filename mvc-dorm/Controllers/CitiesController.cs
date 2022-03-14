@@ -15,9 +15,10 @@ namespace mvc_dorm.Controllers
         {
             return View();
         }
-        public PartialViewResult HeaderCities()
+        public ActionResult HeaderCities()
         {
-            return PartialView();
+            var cityList = cm.GetAll();
+            return PartialView(cityList);
         }
 
         public PartialViewResult ContentCities()
@@ -25,9 +26,10 @@ namespace mvc_dorm.Controllers
             var cityList = cm.GetAll();
             return PartialView(cityList);
         }
-        public PartialViewResult CitiesDetails()
+        public ActionResult CitiesDetails(int id)
         {
-            return PartialView();
+            var cityList = cm.CityByID(id);
+            return PartialView(cityList);
         }
     }
 }

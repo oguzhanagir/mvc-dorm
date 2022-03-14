@@ -1,4 +1,6 @@
-﻿ <!-- News -->
+﻿ @model IEnumerable<EntityLayer.Concrete.News>
+    
+    <!-- News -->
 
 <div class="heading mt-5 pt-5 d-xl-none d-xxl-none ">
     <div class="card card_head_1 card_heading_1">
@@ -9,41 +11,21 @@
 </div>
 <h1 class="text-center mt-5 d-none d-lg-block d-xl-block  card_heading_2">Üniversitelerden ve yurttan haberler</h1>
 
-<div class="container mt-4">
+<div class="container ">
     <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-12 col-lg-6 col-md-12">
+                <div class="card spons">
+                    <div class="card-body">
+                        <a href="@item.NewsLink"><p>@item.NewsTitle</p></a>
 
-        <div class="col-lg-4 mb-4 ps-5">
-            <div class="card card_news" style="width: 18rem; background-color: white !important;">
-                <img src="https://picsum.photos/200" class="card-img-top" alt="...">
-                <div class="card-body ">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 mb-4 ps-5">
-            <div class="card card_news" style="width: 18rem; background-color: white !important;">
-                <img src="https://picsum.photos/200" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 mb-4 ps-5">
-            <div class="card card_news" style="width: 18rem; background-color: white !important;">
-                <img src="https://picsum.photos/200" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                </div>
-            </div>
-        </div>
+        }
     </div>
-</div>
+    </div>
 
 
 

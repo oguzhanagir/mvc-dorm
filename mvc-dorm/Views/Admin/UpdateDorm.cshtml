@@ -1,12 +1,13 @@
 ﻿@model EntityLayer.Concrete.Dorm
-
 @{
     ViewBag.Title = "UpdateDorm";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <form class="form-group" method="post">
-
+    @Html.Label("Yurt ID")
+    @Html.TextBoxFor(x => x.DormID, new { @class = "form-control" })
+    <br />
     @Html.Label("Yurt Adı")
     @Html.TextBoxFor(x => x.DormName, new { @class = "form-control" })
     <br />
@@ -17,7 +18,13 @@
     @Html.TextBoxFor(x => x.Wifi, new { @class = "form-control" })
     <br />
     @Html.Label("Ögün Sayısı")
-    @Html.TextBoxFor(x => x.DormName, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Meal, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yurt Tipi")
+    @Html.TextBoxFor(x => x.Type, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim Yolu")
+    @Html.TextBoxFor(x => x.DormImage, new { @class = "form-control" })
     <br />
 
     @Html.Label("Açıklama")

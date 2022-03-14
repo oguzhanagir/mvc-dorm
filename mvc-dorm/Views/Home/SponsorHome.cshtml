@@ -1,16 +1,23 @@
-﻿ <!-- Sponsor -->
+﻿@model IEnumerable<EntityLayer.Concrete.Sponsor>
+
+ <!-- Sponsor -->
 <div class="container mt-5 mb-5">
     <div class="row">
-        <div class="col-12">
-            <div class="card spons">
-                <div class="card-body">
-                    <h1 class="text-center mb-4 pb-lg-3">Anlaşmalı Markalarımız</h1>
-                    <img class="d-inline-block sponsor_img ms-3 ms-lg-4 " src="https://egirisim.com/wp-content/uploads/2021/03/getir-unicorn.jpeg" alt="">
-                    <img class="d-inline-block sponsor_img ms-lg-4" src="https://egirisim.com/wp-content/uploads/2021/03/getir-unicorn.jpeg" alt="">
-                    <img class="d-inline-block sponsor_img ms-lg-4" src="https://egirisim.com/wp-content/uploads/2021/03/getir-unicorn.jpeg" alt="">
+        
+            <div class="col-12">
+                <div class="card spons">
+                    <div class="card-body">
+
+                        <h1 class="text-center mb-4 pb-lg-3">Anlaşmalı Markalarımız</h1>
+                        @foreach (var item in Model)
+                        {
+                             <a href="@item.SponsorLink"> <img class="d-inline-block sponsor_img ms-3 ms-lg-4 " style="width:150px; height:150px;" src="@item.SponsorImage" alt=""></a>
+                        }
+
+                        </div>
                 </div>
             </div>
-        </div>
+        
     </div>
 </div>
 

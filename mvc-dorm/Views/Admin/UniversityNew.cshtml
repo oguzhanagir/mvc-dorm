@@ -8,7 +8,10 @@
 <form class="form-group" method="post">
 
     @Html.Label("Üniversitye Adı")
-    @Html.TextBoxFor(x => x, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.UniversityName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim Yolu")
+    @Html.DropDownListFor(x => x.Image, (List<SelectListItem>)ViewBag.values, new { @class = "form-control" })
 
     <br />
     @Html.Label("Sehir")

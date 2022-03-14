@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<EntityLayer.Concrete.SocialMedia>
+
 @{
     ViewBag.Title = "AdminSocialMedia";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -22,16 +23,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach (var item in Model)
+                        {
                         <tr>
-                            <td>Twitter</td>
-                            <td>İnstagram</td>
-
+                            <td>@item.SocialMediaName</td>
+                            <td>@item.SocialMediaLink</td>
+                            <td><a href="/Admin/DeleteSocialMedia/@item.SocialMediaID" class="btn btn-rounded btn-danger ">Sil</a></td>
                         </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
 
-                        </tr>
+                        }
+
 
                     </tbody>
                 </table>

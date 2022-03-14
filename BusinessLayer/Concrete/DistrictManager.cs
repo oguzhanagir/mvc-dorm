@@ -11,6 +11,11 @@ namespace BusinessLayer.Concrete
     public class DistrictManager
     {
         Repository<District> repoDistrict = new Repository<District>();
+        public List<District> GetAll()
+        {
+            return repoDistrict.List();
+        }
+
         public int DistrictAddBl(District p)
         {
             if (p.DistrictName == "")
@@ -19,6 +24,12 @@ namespace BusinessLayer.Concrete
             }
             return repoDistrict.Insert(p);
 
+        }
+
+        public int DeleteDistrictBL(int p)
+        {
+            District district = repoDistrict.Find(x => x.DiscritID == p);
+            return repoDistrict.Delete(district);
         }
     }
 }

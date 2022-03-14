@@ -11,9 +11,14 @@ namespace mvc_dorm.Controllers
     public class HomeController : Controller
     {
         AboutManager am = new AboutManager();
+        DormManager dm = new DormManager();
+        SponsorManager sm = new SponsorManager();
+        NewsManager nm = new NewsManager();
+        SocialMediaManager socm = new SocialMediaManager();
         public ActionResult Index()
         {
-            return View();
+            var dormList = dm.GetAll();
+            return View(dormList);
         }
 
         public PartialViewResult Header()
@@ -30,12 +35,14 @@ namespace mvc_dorm.Controllers
 
         public PartialViewResult PopularDorm()
         {
-            return PartialView();
+            var dormList = dm.GetAll();
+            return PartialView(dormList);
         }
 
         public PartialViewResult SponsorHome()
         {
-            return PartialView();
+            var sponsorList = sm.GetAll();
+            return PartialView(sponsorList);
         }
         
         public PartialViewResult Cities()
@@ -44,12 +51,20 @@ namespace mvc_dorm.Controllers
         }
         public PartialViewResult News()
         {
-            return PartialView();
+            var newsList = nm.GetAll();
+            return PartialView(newsList);
         }
 
-        public PartialViewResult Footer()
+        public ActionResult Footer()
         {
-            return PartialView();
+            var socialList = socm.GetAll();
+            return PartialView(socialList);
+        }
+
+        public ActionResult Slider()
+        {
+            var dormList = dm.GetAll();
+            return PartialView(dormList);
         }
 
 

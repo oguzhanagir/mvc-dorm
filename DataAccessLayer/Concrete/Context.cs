@@ -21,6 +21,8 @@ namespace DataAccessLayer.Concrete
         public DbSet<Faculty> Faculties { get; set; }
         public DbSet<University> Universities { get; set; }
         public DbSet<News> News { get; set; }
+        public DbSet<Sponsor> Sponsors { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
     
     }
 }

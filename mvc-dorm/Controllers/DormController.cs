@@ -14,40 +14,62 @@ namespace mvc_dorm.Controllers
       
         // GET: Dorm
         DormManager _dm = new DormManager();
-
+        CommentManager cm = new CommentManager();
+        CitiesManager cim = new CitiesManager();
         public ActionResult Index()
         {
             return View();
         }
 
-        public PartialViewResult HeaderDorm()
+        public ActionResult HeaderDorm()
         {
-            return PartialView();
+            var cityList = cim.GetAll();
+            return PartialView(cityList);
         }
 
-        public PartialViewResult PopularDorm()
+        public PartialViewResult PopularDorms()
         {
-            var dormlist = _dm.GetAll();
-            return PartialView(dormlist);
+            var dormList = _dm.GetAll();
+            return PartialView(dormList);
         }
+        
         public PartialViewResult DormDetails()
         {
+            
             return PartialView();
         }
-        public PartialViewResult DormDetailsHeader()
+        public ActionResult DormDetailsHeader(int id)
         {
+            var dormDetailsList = _dm.DormByID(id);
+            return PartialView(dormDetailsList);
+        }
+
+        public ActionResult DormDetailsContent(int id)
+        {
+            var dormDetailsList = _dm.DormByID(id);
+            return PartialView(dormDetailsList);
+        }
+
+        [HttpGet]
+        public ActionResult DormDetailsComment(int id)
+        {
+            ViewBag.id = id;
+            return PartialView();
+        }
+        [HttpPost]
+        public ActionResult DormDetailsComment(Comment c)
+        {
+            cm.CommentAdd(c);
             return PartialView();
         }
 
-        public PartialViewResult DormDetailsContent()
+        public PartialViewResult DormComments(int id)
         {
-            return PartialView();
+            var commentList = cm.CommentByDorm(id);
+            return PartialView(commentList);
         }
 
-        public PartialViewResult DormDetailsComment()
-        {
-            return PartialView();
-        }
+      
         public ActionResult DormByUniversity()
         {
             return View();

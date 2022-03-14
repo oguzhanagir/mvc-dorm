@@ -190,12 +190,15 @@
     <Content Include="frontend-dorm\assets\logoresponsive.jpeg" />
     <Content Include="frontend-dorm\assets\video1.mp4" />
     <Content Include="frontend-dorm\assets\video2.mp4" />
+    <Content Include="frontend-dorm\assets\video3.mp4" />
     <Content Include="frontend-dorm\css\button.css" />
     <Content Include="frontend-dorm\css\cities-card.css" />
     <Content Include="frontend-dorm\css\loader.css" />
     <Content Include="frontend-dorm\css\main.css" />
     <Content Include="frontend-dorm\css\slider.css" />
+    <Content Include="frontend-dorm\js\jssor.slider-28.1.0.min.js" />
     <Content Include="frontend-dorm\js\slider.js" />
+    <Content Include="frontend-dorm\standard.html" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Kontrol Paneli\assets\assets\images\background\img5.html" />
@@ -968,7 +971,6 @@
     <Content Include="Views\Home\Footer.cshtml" />
     <Content Include="Views\Dorm\Index.cshtml" />
     <Content Include="Views\Dorm\HeaderDorm.cshtml" />
-    <Content Include="Views\Dorm\PopularDorm.cshtml" />
     <Content Include="Views\Cities\Index.cshtml" />
     <Content Include="Views\Cities\HeaderCities.cshtml" />
     <Content Include="Views\Cities\ContentCities.cshtml" />
@@ -1005,9 +1007,15 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Dorm\DormByUniversity.cshtml" />
     <Content Include="Views\Admin\NewsNew.cshtml" />
-    <Content Include="Views\Admin\UpdateDorm.cshtml" />
     <Content Include="Views\Admin\DistrictNew.cshtml" />
     <Content Include="Views\Admin\UpdateAbout.cshtml" />
+    <Content Include="Views\Admin\UpdateDorm.cshtml" />
+    <Content Include="Views\Admin\DistrictList.cshtml" />
+    <Content Include="Views\Admin\FacultyNew.cshtml" />
+    <Content Include="Views\Admin\AdminFaculty.cshtml" />
+    <Content Include="Views\Dorm\PopularDorms.cshtml" />
+    <Content Include="Views\Dorm\DormComments.cshtml" />
+    <Content Include="Views\Home\Slider.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

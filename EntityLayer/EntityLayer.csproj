@@ -60,6 +60,8 @@
     <Compile Include="Concrete\Dorm.cs" />
     <Compile Include="Concrete\Faculty.cs" />
     <Compile Include="Concrete\News.cs" />
+    <Compile Include="Concrete\SocialMedia.cs" />
+    <Compile Include="Concrete\Sponsor.cs" />
     <Compile Include="Concrete\University.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

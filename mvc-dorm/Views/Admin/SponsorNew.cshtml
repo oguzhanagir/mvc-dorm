@@ -1,19 +1,20 @@
-﻿
+﻿@model EntityLayer.Concrete.Sponsor
 @{
     ViewBag.Title = "SponsorNew";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<form>
-    <div class="form-group">
-        <label for="inputText3" class="col-form-label">Sponsor Adı</label>
-        <input id="inputText3" type="text" class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="inputText3" class="col-form-label">Resim Yolu</label>
-        <input id="inputText3" type="text" class="form-control">
-    </div>
+<form class="form-group" method="post">
+
+    @Html.Label("Sponsor Adı")
+    @Html.TextBoxFor(x => x.SponsorName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sponsor Resim Yolu")
+    @Html.TextBoxFor(x => x.SponsorImage, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sponsor Link")
+    @Html.TextBoxFor(x => x.SponsorLink, new { @class = "form-control" })
+
     <button class="btn btn-rounded btn-success mt-3"> Kaydet</button>
 </form>
-
 

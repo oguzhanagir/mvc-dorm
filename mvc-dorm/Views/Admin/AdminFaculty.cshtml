@@ -1,0 +1,46 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Faculty>
+@{
+    ViewBag.Title = "AdminFaculty";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!-- ============================================================== -->
+<!-- basic table  -->
+<!-- ============================================================== -->
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+        <h5 class="card-header">Üniversite Bilgileri</h5>
+        <div class="card-body">
+            <a href="/Admin/FacultyNew/" class="btn btn-rounded btn-dark mb-3 ml-2 mt-1">Yeni Fakülte Ekle</a>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered first">
+                    <thead>
+                        <tr>
+                            <th>Fakülte Adı</th>
+                            <th>Üniversite Adı</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                        <tr>
+                            <td>@item.FacultyName</td>
+                            <td>@item.University.UniversityName</td>
+                            <td><a href="/Admin/DeleteFaculty/@item.FacultyID" class="btn btn-rounded btn-danger ">Sil</a></td>
+
+
+                        </tr>
+
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end basic table  -->
+<!-- ============================================================== -->

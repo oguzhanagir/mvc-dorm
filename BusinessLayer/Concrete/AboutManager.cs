@@ -17,7 +17,7 @@ namespace BusinessLayer.Concrete
             return repoAbout.List();
         }
 
-        public int UpdateAbout(About p)
+        public int UpdateAboutBM(About p)
         {
 
             About about = repoAbout.Find(x => x.AboutID == p.AboutID);

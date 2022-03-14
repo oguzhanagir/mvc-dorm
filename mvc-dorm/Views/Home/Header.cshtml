@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<EntityLayer.Concrete.About>
+    
+<link href="~/frontend-dorm/css/slider.css" type="text/css" />
+<link href="~/frontend-dorm/js/slider.js" type="text/javascript" />
 
 <div class="heading mt-4">
     <div class="card card_head_1">
@@ -7,38 +10,13 @@
         </div>
     </div>
 </div>
-<!-- Slider -->
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="cont  ">
-                <div class="slider"></div>
-                <ul class="nav">
-            </div>
-            <div data-target='right' class="side-nav side-nav--right"></div>
-            <div data-target='left' class="side-nav side-nav--left"></div>
-        </div>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-
-        <script src="~/frontend-dorm/js/slider.js"></script>
-    </div>
-</div>
 
 
-<!-- Slider-End -->
-
-<div class="container main_header_">
-    <div class="head text-center mt-5 mb-3 p-4">
-        <div class="card card_head_2">
-            <div class="card-body card_head_2">
-                <h5 class="head_title_1 d-inline-block ">Senin Yurdunu Beraber Bulalım</h5>
-                <i class="fa-solid fa-magnifying-glass float-end mt-2 "></i>
-            </div>
-        </div>
+@Html.Action("Slider","Home")
 
 
-    </div>
-</div>
+
+
 <!-- Layout -->
 <div class="container mt-lg-5 d-none d-lg-block d-xl-block me-5 ">
     <div class="row ms-5">
@@ -129,7 +107,7 @@
 
                     <!-- Button web -->
                     <div class="btn float-start mt-4 d-none d-lg-block d-xl-block ">
-                        <a href="about.html" class="cta">
+                        <a href="/About/Index" class="cta">
                             <span>Daha Fazla</span>
                             <svg width="13px" height="10px" viewBox="0 0 13 10">
                                 <path d="M1,5 L11,5"></path>

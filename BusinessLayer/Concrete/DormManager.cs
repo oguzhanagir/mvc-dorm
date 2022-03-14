@@ -17,6 +17,13 @@ namespace BusinessLayer.Concrete
             return _repoDorm.List();
         }
 
+        public List<Dorm> DormByID(int id)
+        {
+            return _repoDorm.List(x => x.DormID == id);
+        }
+
+
+
         public int DormAddBl(Dorm p)
         {
             if (p.DormName =="" || p.Bed == "" || p.Wifi=="" || p.Description =="" || p.Adress=="" || p.Phone =="")
@@ -40,6 +47,8 @@ namespace BusinessLayer.Concrete
             dorm.Bed = p.Bed;
             dorm.Wifi = p.Wifi;
             dorm.Meal = p.Meal;
+            dorm.Type = p.Type;
+            dorm.DormImage = p.DormImage;
             dorm.Description = p.Description;
             dorm.Adress = p.Adress;
             dorm.Website = p.Website;

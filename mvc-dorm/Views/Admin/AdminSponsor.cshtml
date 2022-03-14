@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<EntityLayer.Concrete.Sponsor>
 @{
     ViewBag.Title = "AdminSponsor";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -17,24 +17,22 @@
                     <thead>
                         <tr>
                             <th>Sponsor Adı</th>
+                            <th>Sponsor Link</th>
                             <th>Resim Yolu</th>
 
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach (var item in Model)
+                        {
                         <tr>
-                            <td>Getir</td>
-                            <td>Seluklu</td>
+                            <td>@item.SponsorName</td>
+                            <td>@item.SponsorLink</td>
+                            <td>@item.SponsorImage</td>
+                            <td><a href="/Admin/DeleteSponsor/@item.SponsorID" class="btn btn-rounded btn-danger ">Sil</a></td>
+                        </tr>
+                        }
 
-                        </tr>
-                        <tr>
-                            <td>Biletix</td>
-                            <td>Accountant</td>
-                        </tr>
-                        <tr>
-                            <td>D%R</td>
-                            <td>Accountant</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

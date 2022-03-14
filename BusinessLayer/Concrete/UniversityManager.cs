@@ -28,6 +28,11 @@ namespace BusinessLayer.Concrete
 
         }
 
+        public List<University> UniversityByID(int id)
+        {
+            return repoUni.List(x => x.UniversityID == id);
+        }
+
         public int DeleteUniversityBL(int p)
         {
             University university = repoUni.Find(x => x.UniversityID == p);

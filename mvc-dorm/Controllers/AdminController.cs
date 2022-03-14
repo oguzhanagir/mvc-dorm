@@ -16,7 +16,11 @@ namespace mvc_dorm.Controllers
         CitiesManager cm = new CitiesManager();
         AboutManager am = new AboutManager();
         DistrictManager dism = new DistrictManager();
-
+        NewsManager nm = new NewsManager();
+        SponsorManager sm = new SponsorManager();
+        SocialMediaManager som = new SocialMediaManager();
+        FacultyManager fm = new FacultyManager();
+        CommentManager com = new CommentManager();
         // GET: Admin
         public ActionResult Index()
         {
@@ -48,20 +52,52 @@ namespace mvc_dorm.Controllers
 
         public PartialViewResult AdminNews()
         {
-            return PartialView();
+            var newsList = nm.GetAll();
+            return PartialView(newsList);
+        }
+
+        public ActionResult DeleteNews(int id)
+        {
+            nm.DeleteNewsBL(id);
+            return RedirectToAction("AdminNews");
+
         }
         public PartialViewResult AdminSponsor()
         {
-            return PartialView();
+            var sponsorList = sm.GetAll();
+            return PartialView(sponsorList);
         }
+        public ActionResult DeleteSponsor(int id)
+        {
+            sm.DeleteSponsorBL(id);
+            return RedirectToAction("AdminSponsor");
+
+        }
+
+        public ActionResult DeleteFaculty(int id)
+        {
+            fm.DeleteFacultyBL(id);
+            return RedirectToAction("AdminFaculty");
+
+        }
+
         public PartialViewResult AdminComment()
         {
-            return PartialView();
+            var commentList = com.GetAll();
+            return PartialView(commentList);
+        }
+
+        public ActionResult DeleteComment(int id)
+        {
+            com.DeleteCommentBL(id);
+            return RedirectToAction("AdminComment");
+
         }
 
         public PartialViewResult AdminSocialMedia()
         {
-            return PartialView();
+            var socialList = som.GetAll();
+            return PartialView(socialList);
         }
 
         // Dorm Add
@@ -137,7 +173,7 @@ namespace mvc_dorm.Controllers
         public ActionResult UpdateDorm(Dorm p)
         {
             dm.UpdateDorm(p);
-            return RedirectToAction("AdminProductList");
+            return RedirectToAction("AdminDorm");
 
         }
 
@@ -190,7 +226,7 @@ namespace mvc_dorm.Controllers
         public ActionResult DistrictNew(District p)
         {
             dism.DistrictAddBl(p);
-            return RedirectToAction("AdminCity");
+            return RedirectToAction("DistrictList");
         }
 
         [HttpGet]
@@ -205,14 +241,14 @@ namespace mvc_dorm.Controllers
                                                Value = x.CityID.ToString()
                                            }).ToList();
             ViewBag.values = values;
-            return PartialView();
+            return View();
         }
 
         [HttpPost]
         public ActionResult UniversityNew(University p)
         {
             um.UniversityAddBl(p);
-            return View("AdminUniversity");
+            return RedirectToAction("AdminUniversity");
         }
 
         //Delete University
@@ -223,17 +259,50 @@ namespace mvc_dorm.Controllers
 
         }
 
-        public PartialViewResult SponsorNew()
+        [HttpGet]
+        public ActionResult SponsorNew()
         {
-            return PartialView();
+            return View();
         }
-        public PartialViewResult SocialMediaNew()
+
+        [HttpPost]
+        public ActionResult SponsorNew(Sponsor p)
         {
-            return PartialView();
+            sm.SponsorAddBl(p);
+            return RedirectToAction("AdminSponsor");
         }
-        public PartialViewResult NewsNew()
+
+        [HttpGet]
+        public ActionResult SocialMediaNew()
         {
-            return PartialView();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SocialMediaNew(SocialMedia p)
+        {
+            som.SocialMediaAddBl(p);
+            return RedirectToAction("AdminSocialMedia");
+        }
+
+        public ActionResult DeleteSocialMedia(int id)
+        {
+            som.DeleteSocialMediaBL(id);
+            return RedirectToAction("AdminSocialMedia");
+
+        }
+
+        [HttpGet]
+        public ActionResult NewsNew()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult NewsNew(News p)
+        {
+            nm.NewsAddBl(p);
+            return RedirectToAction("AdminNews"); 
         }
 
 
@@ -247,13 +316,59 @@ namespace mvc_dorm.Controllers
             return View(about);
         }
 
+
+
         [HttpPost]
         public ActionResult UpdateAbout(About p)
         {
-            am.UpdateAbout(p);
+            am.UpdateAboutBM(p);
             return RedirectToAction("AdminAbout");
 
         }
 
+        public PartialViewResult DistrictList()
+        {
+            var distList = dism.GetAll();
+
+
+            
+            return PartialView(distList);
+        }
+
+        public ActionResult AdminFaculty()
+        {
+            var facultyList = fm.GetAll();
+            return View(facultyList);
+        }
+
+        [HttpGet]
+        public ActionResult FacultyNew()
+        {
+            Context c = new Context();
+
+            List<SelectListItem> values = (from x in c.Universities.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.UniversityName,
+                                               Value = x.UniversityID.ToString()
+                                           }).ToList();
+            ViewBag.values = values;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult FacultyNew(Faculty p)
+        {
+            fm.FacultyAddBl(p);
+            return RedirectToAction("AdminFaculty");
+        }
+
+
+        public ActionResult DeleteDistrict(int id)
+        {
+            dism.DeleteDistrictBL(id);
+            return RedirectToAction("DistrictList");
+
+        }
     }
 }

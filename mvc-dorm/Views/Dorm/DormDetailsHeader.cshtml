@@ -1,6 +1,12 @@
-﻿ <!-- Head -->
+﻿@model IEnumerable<EntityLayer.Concrete.Dorm>
+    
+    <!-- Head -->
 <div class="container mt-5">
     <div class="row">
+        @foreach (var item in Model)
+        {
+
+
         <div class="col-6 mt-5 pt-5 price_col">
             <!-- Form  -->
 
@@ -9,36 +15,22 @@
             <input class="form-control" type="text" placeholder="Ad Soyad" aria-label="default input example">
 
             <label for="exampleDataList" class="form-label"></label>
-            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Üniversite Seçiniz">
-            <datalist id="datalistOptions">
-                <option value="San Francisco">
-                <option value="New York">
-                <option value="Seattle">
-                <option value="Los Angeles">
-                <option value="Chicago">
-            </datalist>
-            <label for="exampleDataList" class="form-label"></label>
-            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Fakülte Seç">
-            <datalist id="datalistOptions">
-                <option value="San Francisco">
-                <option value="New York">
-                <option value="Seattle">
-                <option value="Los Angeles">
-                <option value="Chicago">
-            </datalist>
-
+            
+            <div>
+                <p>Yetkili Adı: @item.Advisior</p>
+                <p>Telefon Numarası: @item.Phone</p>
+            </div>
             <div class="form-check mt-4">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Kullanıcı Sözleşmesi'ni okudum,kabul ediyorum.
-                </label>
+                
                 <div class="whatsapp float-end pb-4 me-3">
-                    <a href="https://api.whatsapp.com/send?phone=1111111111"><h4 class="d-inline whatsapp">Whatsapp</h4><i class="fa-brands fa-whatsapp ms-2 whatsapp"></i></a>
+                    
+                    <a href="https://api.whatsapp.com/send?phone=@item.Phone"><h4 class="d-inline whatsapp">Whatsapp</h4><i class="fa-brands fa-whatsapp ms-2 whatsapp"></i></a>
                 </div>
             </div>
 
         </div>
-        <div class="col-4 mt-5 ms-5 "><img class="dorm_img" src="https://picsum.photos/100/70" alt=""></div>
+        <div class="col-4 mt-5 ms-5 "><img class="dorm_img" src="@item.DormImage" alt=""></div>
+        }
     </div>
 </div>
 

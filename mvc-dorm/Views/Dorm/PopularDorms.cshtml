@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Dorm>
+
+<!-- İtem-Card -->
+<div class="heading mt-4 d-xl-none d-xxl-none ">
+    <div class="card card_head_1">
+        <div class="card-body">
+            <h1 class="text-center ">En Çok Aranan Yurtlar</h1>
+        </div>
+    </div>
+
+</div>
+
+<h1 class="text-center mt-5 d-none d-lg-block d-xl-block slid mb-4 mt-5">Yurtlar</h1>
+<div class="container mt-5">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 mb-4 ps-5">
+                <div class="card card_news" style="width: 18rem; background-color: white !important;">
+                    <img src="https://picsum.photos/200" class="card-img-top" style="border-radius:30px; padding:15px;" alt="...">
+                    <div class="card-body text-center ">
+                        <h5 class="card-title"><a href="/Dorm/DormDetails/@item.DormID">@item.DormName</a></h5>
+                        <p class="card-text">@item.Description</p>
+
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+
+
+    </div>
+</div>
+
+
+
+<!-- İtem-Card-End -->

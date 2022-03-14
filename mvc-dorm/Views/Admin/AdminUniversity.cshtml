@@ -17,7 +17,8 @@
                     <thead>
                         <tr>
                             <th>Üniversite Adı</th>
-                            <th>Fakülte Adı</th>
+                            <th>Resim Yolu</th>
+                            <th>Sehir Adı</th>
 
                         </tr>
                     </thead>
@@ -27,7 +28,8 @@
 
                         <tr>
                             <td>@item.UniversityName</td>
-                            <td>@item.Faculties</td>
+                            <td>@item.Image</td>
+                            <td>@item.City.CityName</td>
                             <td><a href="/Admin/DeleteProduct/@item.UniversityID" class="btn btn-rounded btn-danger ">Sil</a></td>
                             
                         </tr>

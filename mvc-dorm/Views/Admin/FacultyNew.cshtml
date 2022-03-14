@@ -1,0 +1,19 @@
+﻿@model EntityLayer.Concrete.Faculty
+@{
+    ViewBag.Title = "FacultyNew";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    @Html.Label("Fakülte Adı")
+    @Html.TextBoxFor(x => x.FacultyName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Üniversite")
+    @Html.DropDownListFor(x => x.UniversityID, (List<SelectListItem>)ViewBag.values, new { @class = "form-control" })
+
+
+    <button class="btn btn-rounded btn-success mt-3"> Kaydet</button>
+</form>
+
+

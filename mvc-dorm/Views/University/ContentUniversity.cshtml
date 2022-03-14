@@ -8,10 +8,10 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach (var item in Model)
         {
-        <div class="col">
-            <a href="universities_main.html">
-                <div class="card">
-                    <img src="https://picsum.photos/200/100" class="card-img-top" alt="...">
+        <div class="col text-center">
+            <a href="/University/UniversityDetails/@item.UniversityID">
+                <div class="card" style="border-radius:20px; padding:25px;">
+                    <img src="@item.Image" class="card-img-top" style="border-radius:30px; padding:15px;" alt="...">
                     <p>@item.UniversityName</p>
                 </div>
             </a>

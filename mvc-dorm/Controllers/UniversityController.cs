@@ -18,16 +18,18 @@ namespace mvc_dorm.Controllers
         }
         public PartialViewResult HeaderUniversity()
         {
+            
             return PartialView();
         }
-        public PartialViewResult ContentUniversity()
+        public ActionResult ContentUniversity()
         {
             var universityList = um.GetAll();
             return PartialView(universityList);
         }
-        public PartialViewResult UniversityDetails()
+        public ActionResult UniversityDetails(int id)
         {
-            return PartialView();
+            var universityList = um.UniversityByID(id);
+            return PartialView(universityList);
         }
     }
 }

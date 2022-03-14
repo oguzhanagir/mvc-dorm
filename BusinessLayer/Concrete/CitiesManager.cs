@@ -32,5 +32,10 @@ namespace BusinessLayer.Concrete
             City city = repoCities.Find(x => x.CityID == p);
             return repoCities.Delete(city);
         }
+        public List<City> CityByID(int id)
+        {
+            return repoCities.List(x => x.CityID == id);
+        }
+
     }
 }

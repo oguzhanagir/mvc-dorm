@@ -22,5 +22,6 @@ namespace mvc_dorm.Controllers
         {
             return PartialView();
         }
+        
     }
 }

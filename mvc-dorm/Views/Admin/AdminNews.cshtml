@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<EntityLayer.Concrete.News>
 
 @{
     ViewBag.Title = "AdminNews";
@@ -9,6 +9,7 @@
 <!-- basic table  -->
 <!-- ============================================================== -->
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+  
     <div class="card">
         <h5 class="card-header">Haber Bilgileri</h5>
         <div class="card-body">
@@ -19,21 +20,18 @@
                         <tr>
                             <th>Haber Başlığı</th>
                             <th>Haber Açıklaması </th>
-                            <th>Haber Resmi </th>
 
                         </tr>
                     </thead>
                     <tbody>
-                       
-
+                        @foreach (var item in Model)
+                        {
                             <tr>
-                                <td>CityName</td>
-                                <td>Districts</td>
-                                <td>Districts</td>
-                                <td><a href="" class="btn btn-rounded btn-danger ">Sil</a></td>
+                                <td>@item.NewsTitle</td>
+                                <td>@item.NewsLink</td>
+                                <td><a href="/Admin/DeleteNews/@item.NewsID" class="btn btn-rounded btn-danger ">Sil</a></td>
                             </tr>
-
-
+                        }
 
                     </tbody>
                 </table>

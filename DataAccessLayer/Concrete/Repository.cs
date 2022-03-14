@@ -47,6 +47,11 @@ namespace DataAccessLayer.Concrete
             return _object.ToList();
         }
 
+        public List<T> List(Expression<Func<T, bool>> where)
+        {
+            return _object.Where(where).ToList();
+        }
+
         public int Update(T p)
         {
             return c.SaveChanges();

@@ -1,8 +1,18 @@
-﻿
+﻿@model EntityLayer.Concrete.News
 @{
     ViewBag.Title = "NewsNew";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2> Haber Ekleme Alanı</h2>
+<form class="form-group" method="post">
+
+    @Html.Label("Haber Başlığı")
+    @Html.TextBoxFor(x => x.NewsTitle, new { @class = "form-control" })
+    <br />
+    @Html.Label("Haber Link")
+    @Html.TextBoxFor(x => x.NewsLink, new { @class = "form-control" })
+
+
+    <button class="btn btn-rounded btn-success mt-3"> Kaydet</button>
+</form>
 

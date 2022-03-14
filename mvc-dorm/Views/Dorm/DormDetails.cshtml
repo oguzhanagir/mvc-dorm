@@ -4,8 +4,9 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-@Html.Partial("DormDetailsHeader","Dorm")
-@Html.Partial("DormDetailsContent","Dorm")
-@Html.Partial("DormDetailsComment","Dorm")
-@Html.Action("Footer","Home")
+@Html.Action("DormDetailsHeader", "Dorm")
+@Html.Action("DormDetailsContent", "Dorm")
+@Html.Action("DormDetailsComment", "Dorm")
+@Html.Action("DormComments", "Dorm")
+@Html.Action("Footer", "Home")
 

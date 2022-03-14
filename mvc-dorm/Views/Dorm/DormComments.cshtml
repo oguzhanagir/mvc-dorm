@@ -1,0 +1,40 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Comment>
+
+
+<!-- comment-main -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center me-2 mt-5 ">Yorumlar</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+
+                    <div class="col">
+                        <div class="card-cooment text-center mt-4">
+                            <div class="card-header">
+                                @item.CommentName
+                            </div>
+                            <div class="card-body">
+
+                                <p class="card-text">@item.CommentText</p>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Comment-End  -->

@@ -54,8 +54,13 @@
     <Compile Include="Concrete\AboutManager.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
     <Compile Include="Concrete\CitiesManager.cs" />
+    <Compile Include="Concrete\CommentManager.cs" />
     <Compile Include="Concrete\DistrictManager.cs" />
     <Compile Include="Concrete\DormManager.cs" />
+    <Compile Include="Concrete\FacultyManager.cs" />
+    <Compile Include="Concrete\NewsManager.cs" />
+    <Compile Include="Concrete\SocialMediaManager.cs" />
+    <Compile Include="Concrete\SponsorManager.cs" />
     <Compile Include="Concrete\UniversityManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
