@@ -11,7 +11,7 @@
     @Html.TextBoxFor(x => x.UniversityName, new { @class = "form-control" })
     <br />
     @Html.Label("Resim Yolu")
-    @Html.DropDownListFor(x => x.Image, (List<SelectListItem>)ViewBag.values, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
 
     <br />
     @Html.Label("Sehir")

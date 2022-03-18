@@ -37,5 +37,10 @@ namespace BusinessLayer.Concrete
             return repoCities.List(x => x.CityID == id);
         }
 
+        public List<City> CityByName(string name)
+        {
+            return repoCities.List(x => x.CityName == name);
+        }
+
     }
 }

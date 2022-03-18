@@ -23,6 +23,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<News> News { get; set; }
         public DbSet<Sponsor> Sponsors { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
+        public DbSet<Image> Images { get; set; }
     
     }
 }

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace mvc_dorm.Controllers
 {
+    [AllowAnonymous]
     public class CitiesController : Controller
     {
         CitiesManager cm = new CitiesManager();
@@ -21,8 +22,13 @@ namespace mvc_dorm.Controllers
             return PartialView(cityList);
         }
 
-        public PartialViewResult ContentCities()
+        public PartialViewResult ContentCities(string p)
         {
+            if (!string.IsNullOrEmpty(p))
+            {
+                var cityLista = cm.CityByName(p);
+                return PartialView(cityLista);
+            }
             var cityList = cm.GetAll();
             return PartialView(cityList);
         }

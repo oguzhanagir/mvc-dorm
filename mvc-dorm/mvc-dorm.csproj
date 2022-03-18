@@ -1016,6 +1016,7 @@
     <Content Include="Views\Dorm\PopularDorms.cshtml" />
     <Content Include="Views\Dorm\DormComments.cshtml" />
     <Content Include="Views\Home\Slider.cshtml" />
+    <Content Include="Views\Dorm\DormSlider.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

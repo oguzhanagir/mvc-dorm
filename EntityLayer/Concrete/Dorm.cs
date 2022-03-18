@@ -30,7 +30,7 @@ namespace EntityLayer.Concrete
         [StringLength(40)]
         public string Advisior { get; set; }
 
-        [StringLength(600)]
+       
         public string Description { get; set; }
 
         [StringLength(600)]
@@ -52,6 +52,7 @@ namespace EntityLayer.Concrete
         public virtual Author Author { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
+        public ICollection<Image> Images { get; set; }
 
     
     }

@@ -5,31 +5,19 @@
     <div class="row">
         @foreach (var item in Model)
         {
-
-
-        <div class="col-6 mt-5 pt-5 price_col">
-            <!-- Form  -->
-
-            <h1>Yurttan Fiyat Al</h1>
-            <br>
-            <input class="form-control" type="text" placeholder="Ad Soyad" aria-label="default input example">
-
-            <label for="exampleDataList" class="form-label"></label>
-            
-            <div>
-                <p>Yetkili Adı: @item.Advisior</p>
-                <p>Telefon Numarası: @item.Phone</p>
-            </div>
-            <div class="form-check mt-4">
-                
-                <div class="whatsapp float-end pb-4 me-3">
-                    
-                    <a href="https://api.whatsapp.com/send?phone=@item.Phone"><h4 class="d-inline whatsapp">Whatsapp</h4><i class="fa-brands fa-whatsapp ms-2 whatsapp"></i></a>
+            <div class="heading mt-5 mb-5">
+                <div class="card card_head_1">
+                    <div class="card-body">
+                        <h1 class="text-center ">@item.DormName</h1>
+                    </div>
                 </div>
             </div>
 
-        </div>
-        <div class="col-4 mt-5 ms-5 "><img class="dorm_img" src="@item.DormImage" alt=""></div>
+            @Html.Action("DormSlider")
+
+          
+            @*<div class="col-4 mt-5 ms-5 "><img class="dorm_img" src="@item.DormImage" alt=""></div>*@
+
         }
     </div>
 </div>

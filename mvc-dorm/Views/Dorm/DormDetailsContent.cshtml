@@ -2,37 +2,99 @@
 
 
 
-<!-- Cities-Card -->
-<div class="container  mt-5 " style="margin-bottom:250px;">
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="heading mt-5 mb-5">
-                <div class="card card_head_1">
-                    <div class="card-body">
-                        <h1 class="text-center ">@item.DormName</h1>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-6 col-12 mt-4 pb-lg-4 mt-5  " >
-                <div class="card card_head_2">
-                    <div class="card-body card_head_2 p-4">
-                        <h6 class="head_title_1_2 d-inline-block ">@item.Description</h6>
-                        <p>Yatak Sayısı @item.Bed</p>
-                        <p>Wifi Durumu @item.Wifi</p>
-                        <p>Öğün Sayısı @item.Meal</p>
-                        <p>@item.Type Öğrenci Yurdu</p>
-                        <p>@item.Adress</p>
-                        <p>@item.Website</p>
-                        
+@foreach (var item in Model)
+{
 
-                    </div>
-                </div>
+    <!-- Dorm-Price -->
+    <div class="container mt-5 bg-white p-4  d-xl-none d-xxl-none ">
+        <div class="row">
+            <div class="col-5 ms-3 ">
+                <button type="button" class="btn dorm_write_1 btn-lg ms-5">Yurdu Ara <i class="fa-solid fa-phone"></i></button>
             </div>
-        }
-    </div>
+            <div class="col-4 ms-5 ">
+                <button type="button" class="btn dorm_write btn-lg">Yurda Yaz <i class="fa-brands fa-whatsapp dorm_write_whatsapp "></i></button>
+            </div>
+        </div>
     </div>
 
-        <!-- Cities-Card-End -->
+    <!-- Dorm-price-End -->
+    <!-- web-price -->
+    <div class="container mt-5 bg-white p-4  d-none d-lg-block d-xl-block">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3 ms-5 write_cont ">
+                <button type="button" class="btn dorm_write_1 btn-lg ms-5 align-content-center ">Yurdu Ara <i class="fa-solid fa-phone"></i></button>
+            </div>
+            <div class="col-2 ms-5 write_cont">
+                <button type="button" class="btn dorm_write btn-lg">Yurda Yaz <i class="fa-brands fa-whatsapp dorm_write_whatsapp "></i></button>
+            </div>
+        </div>
+    </div>
 
+    <!-- web-end -->
+
+    <!-- Head-End -->
+
+    
+
+    <!-- Dorm-Details -->
+    <div class="container mt-5 ms-4 ">
+        <div class="row">
+            <div class="col-4">
+                <i class="fa-solid fa-bed dorm_fav ms-2 me-4 "></i><h2 class="d-inline-block">@item.Bed</h2>
+            </div>
+            <div class="col-4">
+                <i class="fa-solid fa-utensils dorm_fav me-4 "></i><h2 class="d-inline-block">@item.Meal</h2>
+            </div>
+            <div class="col-4">
+                <i class="fa-solid fa-wifi dorm_fav me-4 "></i><h2 class="d-inline-block">@item.Wifi</h2>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <i class="fa-solid fa-location-dot me-4 ms-4 mt-4 dorm_fav"></i>
+    <h3 class="d-inline-block">@item.Adress</h3>
+    <br>
+    <i class="fa-solid fa-desktop me-4 ms-3 mt-4 dorm_fav"></i>
+    <h3 class="d-inline-block">@item.Website</h3>
+    <br>
+    <i class="fa-solid fa-phone me-4 ms-3 mt-4 mb-3  dorm_fav"></i>
+    <h3 class="d-inline-block">@item.Phone</h3>
+    <hr>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h5>@item.Description</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dorm-Details-End -->
+    <!-- Cities-Card -->
+    <div class="heading mt-5">
+        <div class="card card_head_1_5 ">
+            <div class="card-body">
+                <h1 class="text-center ">Yurt Özelikleri</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-6">
+                <i class="fa-solid fa-bath me-4 ms-3 mt-4 dorm_fav"></i><h4 class="d-inline-block">Duş ve Wc</h4>
+
+            </div>
+            <div class="col-6"><i class="fa-solid fa-volleyball me-4 ms-3 mt-4 dorm_fav "></i><h4 class="d-inline-block">Spor Salonu</h4></div>
+            <div class="col-6"><i class="fa-solid fa-book me-4 ms-3 mt-4 dorm_fav"></i><h4 class="d-inline-block">Kütüphane</h4></div>
+            <div class="col-6"><i class="fa-solid fa-broom me-4 ms-3 mt-4 dorm_fav"></i><h4 class="d-inline-block">Temizlik</h4></div>
+            <div class="col-6"><i class="fa-solid fa-video me-3 ms-3 mt-4 dorm_fav"></i><h4 class="d-inline-block">Güvenlik Sistemi</h4></div>
+            <div class="col-6"><i class="fa-solid fa-wifi me-4 ms-3 mt-4 dorm_fav"></i><h4 class="d-inline-block">Sınırsız İnternet</h4></div>
+        </div>
+    </div>
+
+
+    <!-- Cities-Card-End -->
+
+
+}

@@ -38,5 +38,11 @@ namespace BusinessLayer.Concrete
             University university = repoUni.Find(x => x.UniversityID == p);
             return repoUni.Delete(university);
         }
+
+        public List<University> UniversityByName(string name)
+        {
+            //Sorgu Tam Ad Şeklinde kontrolü gerçekleşiyor kısmen tanımlama olarak değiştirelecektir {Oğuzhan}
+            return repoUni.List(x => x.UniversityName == name);
+        }
     }
 }

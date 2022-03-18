@@ -1,23 +1,40 @@
 ﻿@model IEnumerable<EntityLayer.Concrete.University>
 
+<div class="container mt-lg-5 d-none d-lg-block d-xl-block me-5 ">
+    <div class="row ms-5">
+        <div class="container mt-lg-5 d-none d-lg-block d-xl-block me-5 ">
+            <div class="row ms-5">
+                <div class="col-8 ms-5">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.TextBox("p")
+                        <input class="form-control" type="submit" aria-label="default input example">
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 <!-- İtem-Card -->
 <div class="container mt-5">
+ 
     <div class="head p-5">
-        <h1>Üniversiteler</h1>
+        <h1 class="text-center">Üniversiteler</h1>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach (var item in Model)
         {
-        <div class="col text-center">
-            <a href="/University/UniversityDetails/@item.UniversityID">
-                <div class="card" style="border-radius:20px; padding:25px;">
-                    <img src="@item.Image" class="card-img-top" style="border-radius:30px; padding:15px;" alt="...">
-                    <p>@item.UniversityName</p>
-                </div>
-            </a>
-        </div>
+            <div class="col text-center">
+                <a href="/University/UniversityDetails/@item.UniversityID">
+                    <div class="card" style="border-radius:20px; padding:25px;">
+                        <img src="@item.Image" class="card-img-top" style="border-radius:30px; padding:15px;" alt="...">
+                        <p>@item.UniversityName</p>
+                    </div>
+                </a>
+            </div>
         }
-</div>
     </div>
+</div>
 
 <!-- İtem-Card-End -->

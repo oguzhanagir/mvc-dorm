@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace mvc_dorm.Controllers
 {
+    [AllowAnonymous]
     public class DormController : Controller
     {
       
@@ -23,14 +24,19 @@ namespace mvc_dorm.Controllers
 
         public ActionResult HeaderDorm()
         {
-            var cityList = cim.GetAll();
-            return PartialView(cityList);
+          
+            return PartialView();
         }
 
-        public PartialViewResult PopularDorms()
+        public ActionResult PopularDorms(string p)
         {
-            var dormList = _dm.GetAll();
-            return PartialView(dormList);
+            if (!string.IsNullOrEmpty(p))
+            {
+                var dormList = _dm.DormByName(p);
+                return PartialView(dormList);
+            }
+            var dormLista = _dm.GetAll();
+            return PartialView(dormLista);
         }
         
         public PartialViewResult DormDetails()
@@ -74,5 +80,11 @@ namespace mvc_dorm.Controllers
         {
             return View();
         }
+        public ActionResult DormSlider(int id)
+        {
+            var dormList = _dm.DormByID(id);
+            return PartialView(dormList);
+        }
+
     }
 }

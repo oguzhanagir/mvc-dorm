@@ -1,5 +1,35 @@
 ﻿@model IEnumerable<EntityLayer.Concrete.Dorm>
 
+<!-- Heading -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Üniversitene Yakın Yurtlar Burada!</h1><br>
+            <p>Üniversitene yakın en popüler yurtları bulabilir, fakültene göre kampüse en yakın yurtlara kolayca ulaşabilirsin!</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Heading-End -->
+<!-- Layout -->
+<div class="container mt-lg-5 d-none d-lg-block d-xl-block me-5 ">
+    <div class="row ms-5">
+        <div class="container mt-lg-5 d-none d-lg-block d-xl-block me-5 ">
+            <div class="row ms-5">
+                <div class="col-8 ms-5">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.TextBox("p")
+                        <input class="form-control" type="submit" aria-label="default input example">
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Layout-End -->
 <!-- İtem-Card -->
 <div class="heading mt-4 d-xl-none d-xxl-none ">
     <div class="card card_head_1">
@@ -13,11 +43,12 @@
 <h1 class="text-center mt-5 d-none d-lg-block d-xl-block slid mb-4 mt-5">Yurtlar</h1>
 <div class="container mt-5">
     <div class="row">
+     
         @foreach (var item in Model)
         {
             <div class="col-lg-4 mb-4 ps-5">
                 <div class="card card_news" style="width: 18rem; background-color: white !important;">
-                    <img src="https://picsum.photos/200" class="card-img-top" style="border-radius:30px; padding:15px;" alt="...">
+                    <img src="@item.DormImage" class="card-img-top" style=" padding:15px;" alt="...">
                     <div class="card-body text-center ">
                         <h5 class="card-title"><a href="/Dorm/DormDetails/@item.DormID">@item.DormName</a></h5>
                         <p class="card-text">@item.Description</p>

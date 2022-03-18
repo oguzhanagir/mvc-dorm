@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-@Html.Partial("FormPrice","DormPrice")
-@Html.Partial("PriceContent","DormPrice")
-@Html.Action("Footer","Home")
+@Html.Partial("PriceContent", "DormPrice")
+@Html.Partial("FormPrice", "DormPrice")
+
+@Html.Action("Footer", "Home")

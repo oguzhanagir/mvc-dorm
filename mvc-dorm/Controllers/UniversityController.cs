@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace mvc_dorm.Controllers
 {
+    [AllowAnonymous]
     public class UniversityController : Controller
     {
         UniversityManager um = new UniversityManager();
@@ -21,8 +22,13 @@ namespace mvc_dorm.Controllers
             
             return PartialView();
         }
-        public ActionResult ContentUniversity()
+        public ActionResult ContentUniversity(string p)
         {
+            if (!string.IsNullOrEmpty(p))
+            {
+                var universityLista = um.UniversityByName(p);
+                return PartialView(universityLista);
+            }
             var universityList = um.GetAll();
             return PartialView(universityList);
         }

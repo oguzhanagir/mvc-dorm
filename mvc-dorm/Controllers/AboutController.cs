@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace mvc_dorm.Controllers
 {
+    [AllowAnonymous]
     public class AboutController : Controller
     {
         AboutManager am = new AboutManager();

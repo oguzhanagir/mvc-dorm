@@ -3,12 +3,14 @@ using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace mvc_dorm.Controllers
 {
+   [AllowAnonymous]
     public class AdminController : Controller
     {
         DormManager dm = new DormManager();
@@ -38,6 +40,7 @@ namespace mvc_dorm.Controllers
             return PartialView(universityList);
         }
 
+        [AllowAnonymous]
         public PartialViewResult AdminDorm()
         {
             var dormList = dm.GetAll();
@@ -124,12 +127,25 @@ namespace mvc_dorm.Controllers
                                             }).ToList();
             ViewBag.values2 = values2;
 
+          
+            
+
             return View();
         }
 
         [HttpPost]
         public ActionResult DormNew(Dorm p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.DormImage = "/Image/" + dosyaAdi + uzanti;
+                
+            }
+
             dm.DormAddBl(p);
             return RedirectToAction("AdminDorm");
         }
@@ -370,5 +386,7 @@ namespace mvc_dorm.Controllers
             return RedirectToAction("DistrictList");
 
         }
+
+      
     }
 }

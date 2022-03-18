@@ -22,6 +22,10 @@ namespace BusinessLayer.Concrete
             return _repoDorm.List(x => x.DormID == id);
         }
 
+        public List<Dorm> DormByName(string name)
+        {
+            return _repoDorm.List(x => x.DormName == name);
+        }
 
 
         public int DormAddBl(Dorm p)
@@ -29,7 +33,7 @@ namespace BusinessLayer.Concrete
             if (p.DormName =="" || p.Bed == "" || p.Wifi=="" || p.Description =="" || p.Adress=="" || p.Phone =="")
             {
                 return -1;
-            }
+            } 
             return _repoDorm.Insert(p);
 
         }
@@ -65,6 +69,7 @@ namespace BusinessLayer.Concrete
         {
             return _repoDorm.Find(x => x.DormID == id);
         }
+
 
     }
 }
